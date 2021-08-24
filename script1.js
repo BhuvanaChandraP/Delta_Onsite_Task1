@@ -1,10 +1,13 @@
-
+// localStorage.clear();
 let total = 0;
 let total1 = 0;
 let total2 = 0;
 let c = 0;
+document.getElementById("score").innerHTML = total;
+document.getElementById("score2").innerHTML = total1;
 localStorage.removeItem("ss");
 localStorage.removeItem("s");
+
 if(localStorage.getItem("option") == "bat")
 {
         document.getElementById("state").innerHTML = "You are Batting";
@@ -77,7 +80,7 @@ function res(){
     }
     if(localStorage.getItem("option") == "bat")
     {
-        alert("You are going to bowl now");
+        //alert("You are going to bowl now");
         localStorage.setItem('ss' , "bated");
         localStorage.setItem("option" , "bowl");
         document.getElementById("state").innerHTML = "You are Bowling";
@@ -85,7 +88,7 @@ function res(){
     }
     else if(localStorage.getItem("option") == "bowl")
     {
-        alert("You are going to bat now");
+        //alert("You are going to bat now");
         localStorage.setItem('s' , "bowled");
         localStorage.setItem("option" , "bat");
         document.getElementById("state").innerHTML = "You are Batting";
