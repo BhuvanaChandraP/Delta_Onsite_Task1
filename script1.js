@@ -34,6 +34,7 @@ function inc(i)
     {
         if(total1 > total)
         {
+            document.getElementById("state").innerHTML = " ";
             document.getElementById("lost").innerHTML= " You lost";
             disable();
         }
@@ -46,10 +47,12 @@ function inc(i)
     //         disable();
     //     }
     // }
+   
     if((localStorage.getItem('ing') == 1) && localStorage.getItem('s') == "bowled")
     {
         if(total1 < total)
         {
+            document.getElementById("state").innerHTML = " ";
             document.getElementById("lost").innerHTML= " You won";
             disable();
         }
@@ -84,6 +87,8 @@ function res(){
         localStorage.setItem('ss' , "bated");
         localStorage.setItem("option" , "bowl");
         document.getElementById("state").innerHTML = "You are Bowling";
+        document.getElementById("c").src = "com.jpg" ;
+        document.getElementById("u").src = "u.png" ;
        
     }
     else if(localStorage.getItem("option") == "bowl")
@@ -92,6 +97,8 @@ function res(){
         localStorage.setItem('s' , "bowled");
         localStorage.setItem("option" , "bat");
         document.getElementById("state").innerHTML = "You are Batting";
+        document.getElementById("c").src = "com.jpg" ;
+        document.getElementById("u").src = "u.png" ;
         
     }
     else{
@@ -99,17 +106,22 @@ function res(){
     }
     if(localStorage.getItem("ing" == 1))
     {
+        document.getElementById("c").src = "com.jpg" ;
+        document.getElementById("u").src = "u.png" ;
         if(total < total1)
         {
+            document.getElementById("state").innerHTML = " ";
             document.getElementById("lost").innerHTML= " You lost";
             disable();
         }
         else if (total == total1)
         {
+            document.getElementById("state").innerHTML = " ";
             document.getElementById("lost").innerHTML = "Match Draw";
             disable();
         }
         else{
+            document.getElementById("state").innerHTML = " ";
             document.getElementById("lost").innerHTML= "You Won !!!!";
             disable();
         }
@@ -121,7 +133,16 @@ function res(){
 document.getElementById("score").innerHTML = total;
 let i ;
 function restart(){
-    window.location = "main.html"
+    // window.location = "main.html"
+    //or 
+    total=0;
+    total1=0;
+    document.getElementById("score").innerHTML = total;
+    document.getElementById("score2").innerHTML = total1;
+    localStorage.removeItem("ss");
+    localStorage.removeItem("s");
+    document.getElementById("c").src = "com.jpg" ;
+    document.getElementById("u").src = "u.png" ;
     document.getElementById("zero").disabled = false;
     document.getElementById("one").disabled =false;
     document.getElementById("two").disabled = false;
@@ -138,6 +159,7 @@ function restart(){
     // window.location.reload();
 }
 function disable(){
+    document.getElementById("state").style.display= "none";
     console.log(total)
     console.log(total1)
     if(total < total1)
@@ -153,7 +175,7 @@ function disable(){
     }
     
     document.getElementById("score").innerHTML = total;
-    total=0;
+    // total=0;
     document.getElementById("zero").disabled = true;
     document.getElementById("one").disabled = true;
     document.getElementById("two").disabled = true;
@@ -219,7 +241,7 @@ function choose1(){
 	else{
         if(localStorage.getItem("option") == "bat")
         {
-            inc( )
+            inc(1)
         }
         else{
             inc(compchoice)  
