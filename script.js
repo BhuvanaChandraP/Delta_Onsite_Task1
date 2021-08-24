@@ -2,7 +2,19 @@ let total = 0;
 document.getElementById("score").innerHTML = total;
 let i ;
 function restart(){
-    window.location.reload();
+    document.getElementById("zero").disabled = false;
+    document.getElementById("one").disabled =false;
+    document.getElementById("two").disabled = false;
+    document.getElementById("three").disabled = false;
+    document.getElementById("four").disabled = false;
+    document.getElementById("five").disabled = false;
+    document.getElementById("six").disabled = false;
+    document.getElementById("lost").style.display = "none";
+    document.getElementById("u").src = "u.png" ;
+    document.getElementById("c").src = "com.jpg" ;
+    total=0;
+    document.getElementById("score").innerHTML = total;
+    // window.location.reload();
 }
 function disable(){
     document.getElementById("zero").disabled = true;
@@ -12,7 +24,7 @@ function disable(){
     document.getElementById("four").disabled = true;
     document.getElementById("five").disabled = true;
     document.getElementById("six").disabled = true;
-   
+    
 }
 function computer (i){
     if(i == 1)

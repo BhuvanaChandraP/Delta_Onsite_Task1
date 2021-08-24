@@ -8,18 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
 </head>
 <body>
 
     <h1 id = "title">Hand Cricket</h1>
-    <div id ="s">
+    
+    <!-- <div id ="s">
         <h1>Score</h1>
         <h1 id = "score"></h1>
+    </div> -->
+    <div id ="s">
+        <h1>Your Score</h1>
+        <h1 id = "score"></h1>
+    </div>
+    <div id ="s">
+        <h1>Computer Score</h1>
+        <h1 id = "score2"></h1>
     </div>
     
-    
-    <h1 id = "lost" style="text-align: center;color: red;font-family: 'Rampart One', cursive;" >Game Over ! </h1>
+    <h1 id = "lost" style="text-align: center;color: red;font-family: 'Rampart One', cursive;" ></h1>
 
     
     <div id = "you">
@@ -33,7 +41,7 @@
         <img id = "c"  src = "com.jpg" width="80px" height="80px">
     </div>
     
-    
+    <h1 id = "state"></h1>
     <div id="fin">
         <button id="zero" onclick="choose0()"><img src="0.jpg" width="80px" height="80px" onclick="choose0()" ></button>
         <button id="one" onclick="choose1()"><img src="1.jpg" width="80px" height="80px"></button>
@@ -46,6 +54,6 @@
     <h1 id = "comment"></h1>
     <button id = "restart" onclick="restart();" >Restart</button>
     <div height="30px"></div>
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>
