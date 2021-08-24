@@ -1,5 +1,6 @@
 let total = 0;
 document.getElementById("score").innerHTML = total;
+let i ;
 function restart(){
     window.location.reload();
 }
@@ -13,12 +14,41 @@ function disable(){
     document.getElementById("six").disabled = true;
    
 }
+function computer (i){
+    if(i == 1)
+    {
+        document.getElementById("c").src = "1.jpg" ;
+    }
+    else if(i == 2 )
+    {
+        document.getElementById("c").src = "2.jpg" ;
+    }
+    else if(i == 3)
+    {
+        document.getElementById("c").src = "3.jpg" ;
+    }
+    else if(i == 4)
+    {
+        document.getElementById("c").src = "4.jpg" ;
+    }
+    else if(i == 5 )
+    {
+        document.getElementById("c").src = "5.jpg" ;
+    }
+    else 
+    {
+        document.getElementById("c").src = "6.jpg" ;
+    }
+}
 
 function choose0 (){
     yourchoice = 0;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "0.jpg" ;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    computer(compchoice);
 	
     total += 0;
     document.getElementById("comment").innerHTML = "A dot ball.... ";
@@ -29,8 +59,10 @@ function choose0 (){
 function choose1(){
     yourchoice = 1;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "1.jpg" ;
+    computer(compchoice);
 	if(compchoice === 1){
 		
         document.getElementById("lost").style.display= "block";
@@ -48,8 +80,10 @@ function choose1(){
 function choose2(){
     yourchoice = 2;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "2.jpg" ;
+    computer(compchoice);
 	if(compchoice === 2){
 		
         document.getElementById("lost").style.display= "block";
@@ -66,8 +100,10 @@ function choose2(){
 function choose3(){
     yourchoice = 3;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "3.jpg" ;
+    computer(compchoice);
 	if(compchoice === 3){
 		
         document.getElementById("lost").style.display= "block";
@@ -86,8 +122,10 @@ function choose3(){
 function choose4(){
     yourchoice = 4;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "4.jpg" ;
+    computer(compchoice);
 	if(compchoice === 4){
 		
         document.getElementById("lost").style.display= "block";
@@ -105,8 +143,10 @@ function choose4(){
 function choose5(){
     yourchoice = 5;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "5.jpg" ;
+    computer(compchoice);
 	if(compchoice === 5){
 		
 	
@@ -124,8 +164,10 @@ function choose5(){
 function choose6(){
     yourchoice = 6;
 	var compchoice = Math.floor(Math.random() * 6) + 1;
-	document.getElementById("userchoice").innerHTML = yourchoice;
-	document.getElementById("computerchoice").innerHTML = compchoice;
+	// document.getElementById("userchoice").innerHTML = yourchoice;
+	// document.getElementById("computerchoice").innerHTML = compchoice;
+    document.getElementById("u").src = "6.jpg" ;
+    computer(compchoice);
 	if(compchoice === 6){
 		
 	
@@ -134,7 +176,7 @@ function choose6(){
 	}
 	else{
         total += 6;
-        document.getElementById("comment").innerHTML = "Six";
+        document.getElementById("comment").innerHTML = "Six!!!!!";
 		document.getElementById("score").innerHTML = total;
 		
 		
