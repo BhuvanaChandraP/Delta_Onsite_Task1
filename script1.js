@@ -133,7 +133,7 @@ function res(){
 document.getElementById("score").innerHTML = total;
 let i ;
 function restart(){
-    // window.location = "main.html"
+    // window.location = "index.html"
     //or 
     total=0;
     total1=0;

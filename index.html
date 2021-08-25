@@ -3,49 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Cricket</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toss</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+        a{
+            text-decoration: none;
+            border-radius: 3px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: rgb(101, 1, 160);
+            color: gold;
+            font-size: large;
+        }
+        #bat{
+            margin: auto;
+            padding: 5px;
+            background-color: rgb(101, 1, 160);
+            color: gold;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            /* margin: 5px; */
+        }
+        #bowl{
+            margin: auto;
+            padding: 5px;
+            border-radius: 3px;
+            background-color: rgb(101, 1, 160);
+            color: gold; 
+        }
+        a:hover{
+            background-color: white;
+            color: black;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border: none;
+        }
+        #toss{
+            text-decoration: none;
+            border-radius: 3px;
+            border: 2px solid black;
+            padding: 10px;
+            background-color: rgb(101, 1, 160);
+            color: gold;
+            font-size: large;
+        }
+        #toss:hover{
+            background-color: white;
+            color: black;
+        }
+        #title{
+            font-family: 'Rampart One', cursive;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
-
     <h1 id = "title">Hand Cricket</h1>
-    <div id ="s">
-        <h1>Score</h1>
-        <h1 id = "score"></h1>
+    <h2>Choose</h2>
+    <div>
+        <img src="head.jpg" id = "hh" onclick="h()">
+        <img src="tail.jpg" id = "tt" onclick="t()">
+        
     </div>
+    <br>
+    <button onclick="toss()" id = "toss">Toss</button>
+    <br>  <br>
+    <img id = "uc" height="100px" width="100px" >
+    <img id = "won" height="100px" width="100px">
+    <h1 id = "result"></h1>
+    <button id = "bat" onclick="b()">Bat</button>
+    <button id = "bowl" onclick="bo()">Bowl</button>
     
-    
-    <h1 id = "lost" style="text-align: center;color: red;font-family: 'Rampart One', cursive;" >Game Over ! </h1>
+    <br><br><br>
+    <a href="index1.html">Start</a>
 
-    
-    <div id = "you">
-        <h1>Your choice</h1>
-        <h1 id = "userchoice"></h1>
-        <img id = "u" src="u.png" width="80px" height="80px">
-    </div>
-    <div id = "com">
-        <h1>Computer  choice</h1>
-        <h1 id = "computerchoice"></h1>
-        <img id = "c"  src = "com.jpg" width="80px" height="80px">
-    </div>
-    
-    
-    <div id="fin">
-        <button id="zero" onclick="choose0()"><img src="0.jpg" width="80px" height="80px" onclick="choose0()" ></button>
-        <button id="one" onclick="choose1()"><img src="1.jpg" width="80px" height="80px"></button>
-        <button id="two" onclick="choose2()"><img src="2.jpg" width="80px" height="80px"></button>
-        <button id="three" onclick="choose3()"><img src="3.jpg" width="80px" height="80px"></button>
-        <button id="four" onclick="choose4()"><img src="4.jpg" width="80px" height="80px"></button>
-        <button id="five" onclick="choose5()"><img src="5.jpg" width="80px" height="80px"></button>
-        <button id="six" onclick="choose6()"><img src="6.jpg" width="80px" height="80px"></button>
-    </div>
-    <h1 id = "comment"></h1>
-    <button id = "restart" onclick="restart();" >Restart</button>
-    <div height="30px"></div>
-    <script src="script.js"></script>
+
+
+    <script>
+        let h1 =0, t1=0 ,h2 =0,t2 =0;
+        document.getElementById("bat").style.display = "none";
+        document.getElementById("bowl").style.display = "none";
+        function b(){
+            localStorage.setItem("option" , "bat");
+            window.location = "index1.html"
+
+        }
+        function bo(){
+            localStorage.setItem("option" , "bowl");
+            window.location = "index1.html"
+            
+        }
+        function Option(){
+            document.getElementById("bat").style.display = "block";
+            document.getElementById("bowl").style.display = "block";
+        }
+        function h(){
+            h1 = "on";
+            document.getElementById("uc").src="head.jpg"
+            document.getElementById("hh").style.display = "none";
+            document.getElementById("tt").style.display = "none";
+
+        }
+        function t(){
+            t1 = "on";
+            document.getElementById("uc").src="tail.jpg"
+            document.getElementById("hh").style.display = "none";
+            document.getElementById("tt").style.display = "none";
+        }
+        function toss(){
+            if(Math.random() < 0.5)
+            {
+                document.getElementById("won").src ="head.jpg"
+                h2 = "on";
+            }
+            else{
+                document.getElementById("won").src ="tail.jpg"
+                t2= "on";
+            }
+            if(document.getElementById("uc").src == document.getElementById("won").src)
+            {
+                localStorage.setItem("toss" , "won")
+               document.getElementById("result").innerHTML = "You Won" ;
+               Option();
+            }
+            else{
+                localStorage.setItem("toss" , "lost")
+                localStorage.setItem("option" , "bowl");
+                document.getElementById("result").innerHTML = "You lost";
+            }
+        }
+
+
+    </script>
 </body>
 </html>

@@ -2,8 +2,12 @@
     padding: 0;
     margin: 0;
 }
+/* body{
+    background-color: blanchedalmond;
+} */
 #state{
     text-align: center;
+    color: chocolate;
 }
  button{
     border: none;
@@ -63,6 +67,7 @@ img{
 #comment{
     text-align: center;
     padding: 40px;
+    font-family: 'Architects Daughter', cursive;
 }
 #fin{
     padding-top: 200px;
