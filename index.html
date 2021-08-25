@@ -13,8 +13,19 @@
             text-align: center;
             background-color: blanchedalmond;
         }
+        #start{
+            margin: auto;
+        }
+        #toss{
+            margin: auto;
+        }
+        /* #cc{
+            display: none;
+        } */
         a{
+            text-align: center;
             text-decoration: none;
+            width: 70px;
             border-radius: 3px;
             border: 2px solid black;
             padding: 10px;
@@ -69,7 +80,7 @@
 </head>
 <body>
     <h1 id = "title">Hand Cricket</h1>
-    <h2>Choose</h2>
+    <h2 id = "cc">Choose</h2>
     <div>
         <img src="head.jpg" id = "hh" onclick="h()">
         <img src="tail.jpg" id = "tt" onclick="t()">
@@ -85,21 +96,33 @@
     <button id = "bowl" onclick="bo()">Bowl</button>
     
     <br><br><br>
-    <a href="index1.html">Start</a>
+    <a href="index1.html" id = "start">Start</a>
 
 
 
     <script>
+        //localStorage.clear();
         let h1 =0, t1=0 ,h2 =0,t2 =0;
+        // document.getElementById("cc").style.display = "block";
         document.getElementById("bat").style.display = "none";
+        document.getElementById("toss").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        
         document.getElementById("bowl").style.display = "none";
         function b(){
+
+            document.getElementById("cc").style.display = "none";
+            document.getElementById("toss").style.display = "block";
             localStorage.setItem("option" , "bat");
+            
             window.location = "index1.html"
 
         }
         function bo(){
+            document.getElementById("cc").style.display = "none";
+            document.getElementById("toss").style.display = "block";
             localStorage.setItem("option" , "bowl");
+           
             window.location = "index1.html"
             
         }
@@ -112,6 +135,8 @@
             document.getElementById("uc").src="head.jpg"
             document.getElementById("hh").style.display = "none";
             document.getElementById("tt").style.display = "none";
+            document.getElementById("cc").style.display = "none";
+            document.getElementById("toss").style.display = "block";
 
         }
         function t(){
@@ -119,6 +144,9 @@
             document.getElementById("uc").src="tail.jpg"
             document.getElementById("hh").style.display = "none";
             document.getElementById("tt").style.display = "none";
+            document.getElementById("cc").style.display = "none";
+            document.getElementById("toss").style.display = "block";
+            
         }
         function toss(){
             if(Math.random() < 0.5)
@@ -134,13 +162,16 @@
             {
                 localStorage.setItem("toss" , "won")
                document.getElementById("result").innerHTML = "You Won" ;
+               document.getElementById("start").style.display = "none";
                Option();
             }
             else{
                 localStorage.setItem("toss" , "lost")
                 localStorage.setItem("option" , "bowl");
+                document.getElementById("start").style.display = "block";
                 document.getElementById("result").innerHTML = "You lost";
             }
+            document.getElementById("toss").style.display = "none";
         }
 
 

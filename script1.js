@@ -75,7 +75,11 @@ function res(){
         
     // }
     
+    if(localStorage.getItem("ing") == 1)
+    {
 
+        alert("First inings over");
+    }
     if(localStorage.getItem("ing") == 2)
     {
 
@@ -130,30 +134,65 @@ function res(){
     
     //localStorage.getItem("option")
 }
+function comments(i){
+    if(i ==0)
+    {
+        document.getElementById("comment").innerHTML = "A dot ball.... " ;
+    }
+    else if(i == 1)
+    {
+        document.getElementById("comment").innerHTML = "A single " ;
+    }
+    else if(i == 2 )
+    {
+        document.getElementById("comment").innerHTML = "Batsman looking for 2 runs..... " ;
+        //document.getElementById("comment").src = "2.jpg" ;
+    }
+    else if(i == 3)
+    {
+        document.getElementById("comment").innerHTML = "Batsman got 3 it was fast run... " ;
+        //document.getElementById("comment").src = "3.jpg" ;
+    }
+    else if(i == 4)
+    {
+        document.getElementById("comment").innerHTML = "Boundry !!" ;
+        //document.getElementById("comment").src = "4.jpg" ;
+    }
+    else if(i == 5 )
+    {
+        document.getElementById("comment").innerHTML =  "A wide and a boundry... ";
+        //document.getElementById("comment").src = "5.jpg" ;
+    }
+    else 
+    {
+        document.getElementById("comment").innerHTML =  "Six!!!!!";
+        //document.getElementById("comment").src = "6.jpg" ;
+    }
+}
 document.getElementById("score").innerHTML = total;
 let i ;
 function restart(){
-    // window.location = "index.html"
+    window.location = "index.html"
     //or 
     total=0;
     total1=0;
-    document.getElementById("score").innerHTML = total;
-    document.getElementById("score2").innerHTML = total1;
-    localStorage.removeItem("ss");
-    localStorage.removeItem("s");
-    document.getElementById("c").src = "com.jpg" ;
-    document.getElementById("u").src = "u.png" ;
-    document.getElementById("zero").disabled = false;
-    document.getElementById("one").disabled =false;
-    document.getElementById("two").disabled = false;
-    document.getElementById("three").disabled = false;
-    document.getElementById("four").disabled = false;
-    document.getElementById("five").disabled = false;
-    document.getElementById("six").disabled = false;
+    // document.getElementById("score").innerHTML = total;
+    // document.getElementById("score2").innerHTML = total1;
+    // localStorage.removeItem("ss");
+    // localStorage.removeItem("s");
+    // document.getElementById("c").src = "com.jpg" ;
+    // document.getElementById("u").src = "u.png" ;
+    // document.getElementById("zero").disabled = false;
+    // document.getElementById("one").disabled =false;
+    // document.getElementById("two").disabled = false;
+    // document.getElementById("three").disabled = false;
+    // document.getElementById("four").disabled = false;
+    // document.getElementById("five").disabled = false;
+    // document.getElementById("six").disabled = false;
    
-    document.getElementById("u").src = "u.png" ;
-    document.getElementById("c").src = "com.jpg" ;
-    document.getElementById("lost").innerHTML = "";
+    // document.getElementById("u").src = "u.png" ;
+    // document.getElementById("c").src = "com.jpg" ;
+    // document.getElementById("lost").innerHTML = "";
    
    
     // window.location.reload();
@@ -242,13 +281,15 @@ function choose1(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(1)
+            comments(1);
         }
         else{
             inc(compchoice)  
+            comments(compchoice);
         }
         //inc(1);
         // total += 1;
-        document.getElementById("comment").innerHTML = "A single ";
+        //document.getElementById("comment").innerHTML = "A single ";
 		document.getElementById("score").innerHTML = total;
         document.getElementById("score2").innerHTML = total1;
         console.log(total);
@@ -271,13 +312,15 @@ function choose2(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(2)
+            comments(2);
         }
         else{
-            inc(compchoice)  
+            inc(compchoice) 
+            comments(compchoice); 
         }
         //inc(2);
         // total += 2;
-        document.getElementById("comment").innerHTML = "Batsman looking for 2 runs..... ";
+        //document.getElementById("comment").innerHTML = "Batsman looking for 2 runs..... ";
 		document.getElementById("score").innerHTML = total;
         document.getElementById("score2").innerHTML = total1;
 		
@@ -300,13 +343,15 @@ function choose3(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(3)
+            comments(3);
         }
         else{
             inc(compchoice)  
+            comments(compchoice);
         }
         //inc(3);
         // total += 3;
-        document.getElementById("comment").innerHTML = "Batsman got 3 it was fast run... ";
+        //document.getElementById("comment").innerHTML = "Batsman got 3 it was fast run... ";
         document.getElementById("score").innerHTML = total;
         document.getElementById("score2").innerHTML = total1;
 		
@@ -331,13 +376,15 @@ function choose4(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(4)
+            comments(4);
         }
         else{
             inc(compchoice)  
+            comments(compchoice);
         }
         //inc(4);
         // total += 4;
-        document.getElementById("comment").innerHTML = "Boundry !!";
+       // document.getElementById("comment").innerHTML = "Boundry !!";
         document.getElementById("score").innerHTML = total;
 		document.getElementById("score2").innerHTML = total1;
 		
@@ -361,13 +408,15 @@ function choose5(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(5)
+            comments(5);
         }
         else{
             inc(compchoice)  
+            comments(compchoice);
         }
         //inc(5);
         // total += 5;
-        document.getElementById("comment").innerHTML = "A wide and a boundry... ";
+        //document.getElementById("comment").innerHTML = "A wide and a boundry... ";
 		document.getElementById("score").innerHTML = total;
 		document.getElementById("score2").innerHTML = total1;
 		
@@ -390,13 +439,15 @@ function choose6(){
         if(localStorage.getItem("option") == "bat")
         {
             inc(6)
+            comments(6);
         }
         else{
             inc(compchoice)  
+            comments(compchoice);
         }
         //inc(6);
         // total += 6;
-        document.getElementById("comment").innerHTML = "Six!!!!!";
+        //document.getElementById("comment").innerHTML = "Six!!!!!";
 		document.getElementById("score").innerHTML = total;
         document.getElementById("score2").innerHTML = total1;
 		
